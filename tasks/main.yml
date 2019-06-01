@@ -1,0 +1,7 @@
+---
+
+- name: manage group
+  group:
+    name: "{{ item.name }}"
+    system: "{{ item.system | default(omit) }}"
+  loop: "{{ group_list }}"
