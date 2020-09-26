@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  name: 'Verify'
+  become: True
+  gather_facts: True
+
+  tasks:
+    - name: 'Check groups'
+      group:
+        name: "{{ item.group }}"
+      loop:
+        - group: 'group1'
+      register: __verify_groups
+      failed_when: __verify_groups.changed

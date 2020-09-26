@@ -1,6 +1,6 @@
 ---
 
-- name: manage group
+- name: 'manage group'
   group:
     name: "{{ item.name }}"
     system: "{{ item.system | default(omit) }}"
